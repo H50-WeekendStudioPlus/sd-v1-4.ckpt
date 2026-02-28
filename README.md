@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7c880537e22218c3f98b8581d8e7dd7fdfae73ba5902056e3dbe16cde5b32ca
-size 221
+本仓库原摘自`https://www.runoob.com/python3/python-ai-draw.html`
+本仓库下载自`https://huggingface.co/CompVis/stable-diffusion-v-1-4-original`
+中文镜像地址为`https://hf-mirror.com/CompVis/stable-diffusion-v-1-4-original`
