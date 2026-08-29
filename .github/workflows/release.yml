@@ -1,0 +1,32 @@
+name: Package and Release Models
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Verify model files
+        run: |
+          echo "当前目录结构："
+          ls -lh
+          echo "模型文件夹大小："
+          du -sh ./archive/data 2>/dev/null || echo "请确认 model_weights 目录存在"
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            *
+          body: |
+            ## 模型权重文件
+
+            本 Release 包含模型权重。
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
